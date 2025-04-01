@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const API_KEY = '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';
+        async function getMessage(){
+            try{
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${API_KEY}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-4o",
+                        message:[{role: "user", content: "Hello!"}]
+                    })
+                }
+                const response = await fetch('https://api.openai.com/v1/chat/completions', options)
+                const data = await response.json()
+                console.log(data);
+            }catch (error){
+                console.log(error);
+            }
+        }
+    
+    </script>
+</body>
+</html>

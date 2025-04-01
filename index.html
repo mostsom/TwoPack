@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwoPack</title>
+    <style>
+        #cs{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        #c1{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+        }
+        #c1 canvas{
+            filter: blur(5px) contrast(200);
+        }
+        #settings{
+            display: none;
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            background-color: lightgray;
+            border: 10px solid black;
+            text-align: center;
+        }
+        #settings #set1{
+            overflow-y: scroll;
+            width: 100%;
+        }
+        #settings #set1 select{
+            font-size: 40px;
+        }
+        #tbody{
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #eicanvas{
+            background-color: black;
+            position: absolute;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body id="tbody">
+    <canvas id="eicanvas"></canvas>
+    <div id="cs">
+        <div id="c1"></div>
+        <br>
+        <div id="c2"></div>
+    </div>
+    <div id="settings">
+        <div id="set1">
+            <select id="aiselect">
+                <option value="0">1 AI</option>
+                <option value="1">2 AI</option>
+                <option value="2">3 AI</option>
+                <option value="3">4 AI</option>
+                <option value="4">5 AI</option>
+            </select>
+            <div>
+                <p>GDP</p>
+                <input id="inpR" type="range">
+                <p>
+                    The economic strength of the country. It affects the ability to fund wars, invest in infrastructure, and engage in diplomacy and trade.
+                </p>
+            </div>
+            <div>
+                <p>Resources</p>
+                <input id="inpR" type="range">
+                <p>
+                    Natural resources such as oil, gas, metals, and agriculture. These resources impact the country's economic capacity and trading power.
+                </p>
+            </div>
+            <div>
+                <p>Technological Development</p>
+                <input id="inpR" type="range">
+                <p>
+                    The level of technological advancement, which can provide an advantage in warfare or economic development.
+                </p>
+            </div>
+            <div>
+                <p>Government Type</p>
+                <select id="inpR">
+                    <option value="Democracy">Democracy</option>
+                    <option value="Monarchy">Monarchy</option>
+                    <option value="Communist">Communist</option>
+                    <option value="Constitutional monarchy">Constitutional monarchy</option>
+                    <option value="Presidential system">Presidential system</option>
+                    <option value="Maoism">Maoism</option>
+                    <option value="Bureaucracy">Bureaucracy</option>
+                    <option value="Dictatorship">Dictatorship</option>
+                    <option value="Oligarchy">Oligarchy</option>
+                    <option value="Federal republic">Federal republic</option>
+                    <option value="Islamic republic">Islamic republic</option>
+                    <option value="Confederation">Confederation</option>
+                    <option value="Timocracy">Timocracy</option>
+                    <option value="Colonialism">Colonialism</option>
+                    <option value="Legislative">Legislative</option>
+                </select>
+                <p>
+                    Democracy, authoritarianism, monarchy, etc. This will determine how decisions are made within the country, its internal stability, and its international strategy.
+                </p>
+            </div>
+            <div>
+                <p>International Relations</p>
+                <input id="inpR" type="range">
+                <p>
+                    The status of diplomatic ties with other countries, including allies and rivals.
+                </p>
+            </div>
+            <div>
+                <p>Stability</p>
+                <input id="inpR" type="range">
+                <p>
+                    The level of political stability. Social unrest or protests could affect a country’s ability to act on the global stage.
+                </p>
+            </div>
+            <div>
+                <p>Military Size</p>
+                <input id="inpR" type="range">
+                <p>
+                    The number of soldiers and weaponry. This will impact the country’s ability to wage war.
+                </p>
+            </div>
+            <div>
+                <p>Defense Systems</p>
+                <input id="inpR" type="range">
+                <p>
+                    The country’s defensive capabilities, including fortifications, anti-air defenses, or cyber-defense systems.
+                </p>
+            </div>
+            <div>
+                <p>Population</p>
+                <input id="inpR" type="range">
+                <p>
+                    This affects the workforce, consumption, and potential social challenges (e.g., aging population or labor shortages).
+                </p>
+            </div>
+            <div>
+                <p>Education and Healthcare</p>
+                <input id="inpR" type="range">
+                <p>
+                    The country’s level of education and healthcare can influence technological development and social well-being.
+                </p>
+            </div>
+            <div>
+                <p>Ecological Disasters</p>
+                <input id="inpR" type="range">
+                <p>
+                    The likelihood of natural disasters such as earthquakes, floods, etc.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="MMv3(ver 1.1.3).js"></script>
+    <script src="aiRes.js"></script>
+    <script src="class.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

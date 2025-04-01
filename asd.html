@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatGPT API Example</title>
+</head>
+<body>
+  <h1>ChatGPT API в браузере</h1>
+  <button onclick="askGPT()">Спросить GPT</button>
+  <pre id="response"></pre>
+
+  <script>
+    async function askGPT() {
+      const responseBox = document.getElementById('response');
+
+      const apiKey = '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'; // ⚠️ Никогда не вставляй сюда реальный ключ на проде!
+
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o',
+          messages: [
+            { role: 'system', content: 'Ты дружелюбный помощник.' },
+            { role: 'user', content: 'Привет! Расскажи анекдот.' }
+          ]
+        })
+      });
+
+      const data = await res.json();
+      const message = data.choices?.[0]?.message?.content || 'Нет ответа';
+      responseBox.textContent = message;
+    }
+  </script>
+</body>
+</html>
